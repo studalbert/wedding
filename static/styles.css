@@ -1,0 +1,710 @@
+body {
+    background-color: #d6e6ff; /* Нежно-голубой фон */
+    text-align: center;
+    font-family: 'Pacifico', cursive;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 50px 0;
+    min-height: 100vh; /* Длинная первая страница */
+}
+
+.photo-section {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.photo-section img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 8px solid white;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.photo-section img:hover {
+    transform: scale(1.05);
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #444;
+    font-family: 'Dancing Script', cursive;
+}
+/* Стиль для экрана шириной до 768px (планшеты и мобильные устройства) */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Меньший шрифт на мобильных устройствах */
+    }
+
+    .photo-section img {
+        width: 200px; /* Уменьшаем размеры изображений */
+        height: 200px;
+    }
+
+    .profile img {
+        width: 220px; /* Уменьшаем размер профиля */
+        height: 240px;
+    }
+
+    h2 {
+        font-size: 2rem; /* Меньший размер заголовков */
+    }
+
+    .second-page, .third-page, .page4, .page5 {
+        padding: 30px 10px; /* Уменьшаем отступы на мобильных устройствах */
+    }
+
+    .circle-container {
+        display: flex;
+        flex-wrap: wrap; /* Круги становятся в несколько рядов */
+        justify-content: center;
+    }
+
+    .circle {
+        width: 25px; /* Уменьшаем размер кругов */
+        height: 25px;
+        margin: 5px;
+    }
+
+    .time-event {
+        display: block;
+        text-align: center;
+    }
+
+    .schedule {
+        display: block;
+    }
+}
+
+/* Стиль для экрана шириной до 480px (мобильные устройства) */
+@media (max-width: 480px) {
+    .photo-section img {
+        width: 150px; /* Еще меньше изображения */
+        height: 150px;
+    }
+
+    .profile img {
+        width: 200px; /* Уменьшаем размер профиля */
+        height: 220px;
+    }
+
+    h2 {
+        font-size: 1.8rem; /* Еще меньше заголовки */
+    }
+
+    p {
+        font-size: 14px; /* Меньше шрифт для текста */
+    }
+
+    .circle {
+        width: 20px; /* Еще меньше круги */
+        height: 20px;
+    }
+}
+.heart {
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    font-size: 2rem;
+    color: red;
+    animation: heartbeat 1.5s infinite;
+}
+
+.text-section p {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.date-section p {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 50px;
+}
+
+/* Вторая страница */
+.second-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.second-page.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.second-page h2 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.second-page p {
+    font-size: 1.3rem;
+    color: #555;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.second-page .couple-photo img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 5px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+}
+
+/* Третья страница */
+.third-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.third-page.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.third-page h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.profile img {
+    width: 260px; /* Увеличил размер */
+    height: 280px; /* Сделал слегка овальными */
+    object-fit: cover;
+    border-radius: 50% / 55%; /* Овальная форма */
+    border: 6px solid white;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile img:hover {
+    transform: scale(1.07);
+}
+
+.profile h3 {
+    font-size: 2.2rem;
+    color: #444;
+    margin-top: 15px;
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Анимированные сердечки */
+@keyframes floating-hearts {
+    0% { transform: translateY(100vh) scale(0.8); opacity: 0.8; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    color: red;
+    font-size: 24px;
+    opacity: 0;
+    animation: floating-hearts 6s linear infinite;
+}
+
+/* Сердечки слева */
+.heart:nth-child(1) { left: -95%; animation-delay: 0s; }
+.heart:nth-child(2) { left: -85%; animation-delay: 1s; }
+.heart:nth-child(3) { left: -75%; animation-delay: 2s; }
+.heart:nth-child(4) { left: -65%; animation-delay: 3s; }
+.heart:nth-child(5) { left: -55%; animation-delay: 4s; }
+
+/* Сердечки справа */
+.heart:nth-child(6) { left: 55%; animation-delay: 5s; }
+.heart:nth-child(7) { left: 65%; animation-delay: 6s; }
+.heart:nth-child(8) { left: 75%; animation-delay: 7s; }
+.heart:nth-child(9) { left: 85%; animation-delay: 8s; }
+.heart:nth-child(10) { left: 95%; animation-delay: 9s; }
+
+/* Применяем шрифты ко всему документу */
+body {
+    font-family: 'Playfair Display', serif; /* Основной шрифт для текста */
+}
+
+/* Стиль для страницы 4 */
+.page4 {
+    min-height: 100vh; /* Сделать контейнер растягивающимся на всю высоту экрана */
+    background-color: #fff; /* Белый фон */
+    padding: 50px 20px; /* Отступы для содержимого */
+    box-sizing: border-box; /* Чтобы padding не выходил за пределы контейнера */
+}
+
+/* Стиль для заголовков (они будут красивыми с Pacifico) */
+h1, h2, h3, h4 {
+    font-family: 'Pacifico', cursive; /* Шрифт для заголовков */
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Стиль для основного текста */
+p {
+    text-align: center;
+    font-family: 'Playfair Display', serif; /* Элегантный шрифт для текста */
+    font-size: 20px;
+    color: #34495e;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+/* Стиль для курсивного текста */
+.italic-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: #2c3e50;
+}
+
+/* Кружочки внизу */
+.circle-container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.circle {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color: #3498db;
+}
+
+/* Круги с разными цветами */
+.circle1 { background-color: #e74c3c; }
+.circle2 { background-color: #f39c12; }
+.circle3 { background-color: #2ecc71; }
+.circle4 { background-color: #9b59b6; }
+.circle5 { background-color: #1abc9c; }
+
+/* Стиль для страницы 5 */
+.page5 {
+    min-height: 100vh; /* Сделать контейнер растягивающимся на всю высоту экрана */
+    background-color: #f7c8d8; /* Нежно-розовый фон */
+    padding: 50px 20px;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif; /* Для красивого текста */
+}
+
+/* Стиль для заголовка */
+h1 {
+    font-family: 'Pacifico', cursive; /* Шрифт для заголовков */
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+/* Стиль для столбца с временем и событием */
+.schedule {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+/* Время в левой части */
+.time-event .time {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+/* Событие в левой части */
+.time-event .event {
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.5;
+}
+
+/* Описание в правой части */
+.description {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+/* Центрирование текста в описаниях */
+.description p {
+    font-style: italic;
+    font-size: 20px;
+}
+
+/* Стилизация для всего текста */
+p {
+    text-align: center;
+    font-size: 18px;
+    color: #34495e;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+
+/*body {*/
+/*    background-color: #d6e6ff; !* Нежно-голубой фон *!*/
+/*    text-align: center;*/
+/*    font-family: 'Pacifico', cursive;*/
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.container {*/
+/*    padding: 50px 0;*/
+/*    min-height: 100vh; !* Длинная первая страница *!*/
+/*}*/
+
+/*.photo-section {*/
+/*    text-align: center;*/
+/*    margin-bottom: 30px;*/
+/*    position: relative;*/
+/*}*/
+
+/*.photo-section img {*/
+/*    width: 250px;*/
+/*    height: 250px;*/
+/*    object-fit: cover;*/
+/*    border: 8px solid white;*/
+/*    border-radius: 20px;*/
+/*    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);*/
+/*    transition: transform 0.3s ease-in-out;*/
+/*}*/
+
+/*.photo-section img:hover {*/
+/*    transform: scale(1.05);*/
+/*}*/
+
+/*h2 {*/
+/*    font-size: 2.5rem;*/
+/*    color: #444;*/
+/*    font-family: 'Dancing Script', cursive;*/
+/*}*/
+
+/*.heart {*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    right: -30px;*/
+/*    font-size: 2rem;*/
+/*    color: red;*/
+/*    animation: heartbeat 1.5s infinite;*/
+/*}*/
+
+/*.text-section p {*/
+/*    font-size: 1.8rem;*/
+/*    font-weight: bold;*/
+/*    color: #333;*/
+/*}*/
+
+/*.date-section p {*/
+/*    font-size: 2rem;*/
+/*    font-weight: bold;*/
+/*    color: #333;*/
+/*    margin-top: 50px;*/
+/*}*/
+
+/*!* Вторая страница *!*/
+/*.second-page {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    background-color: white;*/
+/*    padding: 50px;*/
+/*    text-align: center;*/
+/*    opacity: 0;*/
+/*    transform: translateY(50px);*/
+/*    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;*/
+/*}*/
+
+/*.second-page.visible {*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
+
+/*.second-page h2 {*/
+/*    font-size: 2.5rem;*/
+/*    color: #333;*/
+/*}*/
+
+/*.second-page p {*/
+/*    font-size: 1.3rem;*/
+/*    color: #555;*/
+/*    line-height: 1.6;*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*.second-page .couple-photo img {*/
+/*    width: 300px;*/
+/*    height: 300px;*/
+/*    object-fit: cover;*/
+/*    border-radius: 20px;*/
+/*    border: 5px solid white;*/
+/*    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);*/
+/*    margin-top: 30px;*/
+/*}*/
+
+/*!* Третья страница *!*/
+/*.third-page {*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    height: 100vh;*/
+/*    background-color: white;*/
+/*    padding: 50px;*/
+/*    text-align: center;*/
+/*    opacity: 0;*/
+/*    transform: translateY(50px);*/
+/*    transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;*/
+/*}*/
+
+/*.third-page.visible {*/
+/*    opacity: 1;*/
+/*    transform: translateY(0);*/
+/*}*/
+
+/*.third-page h2 {*/
+/*    font-size: 2.5rem;*/
+/*    color: #333;*/
+/*    margin-bottom: 40px;*/
+/*}*/
+
+/*.profile {*/
+/*    text-align: center;*/
+/*    margin-bottom: 50px;*/
+/*}*/
+
+/*.profile img {*/
+/*    width: 260px; !* Увеличил размер *!*/
+/*    height: 280px; !* Сделал слегка овальными *!*/
+/*    object-fit: cover;*/
+/*    border-radius: 50% / 55%; !* Овальная форма *!*/
+/*    border: 6px solid white;*/
+/*    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+/*    transition: transform 0.3s ease-in-out;*/
+/*}*/
+
+/*.profile img:hover {*/
+/*    transform: scale(1.07);*/
+/*}*/
+
+/*.profile h3 {*/
+/*    font-size: 2.2rem;*/
+/*    color: #444;*/
+/*    margin-top: 15px;*/
+/*    font-family: 'Dancing Script', cursive;*/
+/*}*/
+
+/*!* Анимированные сердечки *!*/
+/*@keyframes floating-hearts {*/
+/*    0% { transform: translateY(100vh) scale(0.8); opacity: 0.8; }*/
+/*    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }*/
+/*}*/
+
+/*.hearts-container {*/
+/*    position: fixed;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100vh;*/
+/*    pointer-events: none;*/
+/*    overflow: hidden;*/
+/*}*/
+
+/*.heart {*/
+/*    position: absolute;*/
+/*    color: red;*/
+/*    font-size: 24px;*/
+/*    opacity: 0;*/
+/*    animation: floating-hearts 6s linear infinite;*/
+/*}*/
+
+/*!* Сердечки слева *!*/
+/*.heart:nth-child(1) { left: -95%; animation-delay: 0s; }*/
+/*.heart:nth-child(2) { left: -85%; animation-delay: 1s; }*/
+/*.heart:nth-child(3) { left: -75%; animation-delay: 2s; }*/
+/*.heart:nth-child(4) { left: -65%; animation-delay: 3s; }*/
+/*.heart:nth-child(5) { left: -55%; animation-delay: 4s; }*/
+
+/*!* Сердечки справа *!*/
+/*.heart:nth-child(6) { left: 55%; animation-delay: 5s; }*/
+/*.heart:nth-child(7) { left: 65%; animation-delay: 6s; }*/
+/*.heart:nth-child(8) { left: 75%; animation-delay: 7s; }*/
+/*.heart:nth-child(9) { left: 85%; animation-delay: 8s; }*/
+/*.heart:nth-child(10) { left: 95%; animation-delay: 9s; }*/
+
+/*!* Применяем шрифты ко всему документу *!*/
+/*body {*/
+/*    font-family: 'Playfair Display', serif; !* Основной шрифт для текста *!*/
+/*}*/
+
+/*!* Стиль для страницы 4 *!*/
+/*.page4 {*/
+/*    min-height: 100vh; !* Сделать контейнер растягивающимся на всю высоту экрана *!*/
+/*    background-color: #fff; !* Белый фон *!*/
+/*    padding: 50px 20px; !* Отступы для содержимого *!*/
+/*    box-sizing: border-box; !* Чтобы padding не выходил за пределы контейнера *!*/
+/*}*/
+
+/*!* Стиль для заголовков (они будут красивыми с Pacifico) *!*/
+/*h1, h2, h3, h4 {*/
+/*    font-family: 'Pacifico', cursive; !* Шрифт для заголовков *!*/
+/*    color: #2c3e50;*/
+/*    text-align: center;*/
+/*    margin-bottom: 20px;*/
+/*}*/
+
+/*!* Стиль для основного текста *!*/
+/*p {*/
+/*    text-align: center;*/
+/*    font-family: 'Playfair Display', serif; !* Элегантный шрифт для текста *!*/
+/*    font-size: 20px;*/
+/*    color: #34495e;*/
+/*    line-height: 1.6;*/
+/*    margin: 20px 0;*/
+/*}*/
+
+/*!* Стиль для курсивного текста *!*/
+/*.italic-text {*/
+/*    font-family: 'Playfair Display', serif;*/
+/*    font-size: 24px;*/
+/*    font-style: italic;*/
+/*    color: #2c3e50;*/
+/*}*/
+
+/*!* Кружочки внизу *!*/
+/*.circle-container {*/
+/*    text-align: center;*/
+/*    margin-top: 40px;*/
+/*}*/
+
+/*.circle {*/
+/*    display: inline-block;*/
+/*    width: 30px;*/
+/*    height: 30px;*/
+/*    margin: 0 10px;*/
+/*    border-radius: 50%;*/
+/*    background-color: #3498db;*/
+/*}*/
+
+/*!* Круги с разными цветами *!*/
+/*.circle1 { background-color: #e74c3c; }*/
+/*.circle2 { background-color: #f39c12; }*/
+/*.circle3 { background-color: #2ecc71; }*/
+/*.circle4 { background-color: #9b59b6; }*/
+/*.circle5 { background-color: #1abc9c; }*/
+
+/*!* Стиль для страницы 5 *!*/
+/*.page5 {*/
+/*    min-height: 100vh; !* Сделать контейнер растягивающимся на всю высоту экрана *!*/
+/*    background-color: #f7c8d8; !* Нежно-розовый фон *!*/
+/*    padding: 50px 20px;*/
+/*    box-sizing: border-box;*/
+/*    font-family: 'Playfair Display', serif; !* Для красивого текста *!*/
+/*}*/
+
+/*!* Стиль для заголовка *!*/
+/*h1 {*/
+/*    font-family: 'Pacifico', cursive; !* Шрифт для заголовков *!*/
+/*    color: #2c3e50;*/
+/*    text-align: center;*/
+/*    margin-bottom: 40px;*/
+/*    font-size: 40px;*/
+/*}*/
+
+/*!* Стиль для столбца с временем и событием *!*/
+/*.schedule {*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: flex-start;*/
+/*    margin-bottom: 30px;*/
+/*    font-size: 18px;*/
+/*}*/
+
+/*!* Время в левой части *!*/
+/*.time-event .time {*/
+/*    font-weight: bold;*/
+/*    color: #2c3e50;*/
+/*    font-size: 20px;*/
+/*}*/
+
+/*!* Событие в левой части *!*/
+/*.time-event .event {*/
+/*    font-size: 18px;*/
+/*    color: #34495e;*/
+/*    line-height: 1.5;*/
+/*}*/
+
+/*!* Описание в правой части *!*/
+/*.description {*/
+/*    text-align: center;*/
+/*    color: #7f8c8d;*/
+/*    font-size: 18px;*/
+/*    line-height: 1.5;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*!* Центрирование текста в описаниях *!*/
+/*.description p {*/
+/*    font-style: italic;*/
+/*    font-size: 20px;*/
+/*}*/
+
+/*!* Стилизация для всего текста *!*/
+/*p {*/
+/*    text-align: center;*/
+/*    font-size: 18px;*/
+/*    color: #34495e;*/
+/*    line-height: 1.6;*/
+/*    margin: 20px 0;*/
+/*}*/
+
+

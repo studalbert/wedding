@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тимур & Настя</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <div class="photo-section">
+            <img src="{{ url_for('static', filename='timur.jpg') }}" alt="Тимур">
+            <h2>Тимур</h2>
+            <span class="heart">❤️</span>
+        </div>
+        <div class="photo-section">
+            <img src="{{ url_for('static', filename='nastya.jpg') }}" alt="Настя">
+            <h2>Настя</h2>
+            <span class="heart">❤️</span>
+        </div>
+        <div class="text-section">
+            <p>Т + Н = ❤️</p>
+            <p>МЫ ВЫРОСЛИ, НАМ ТЕПЕРЬ МОЖНО!</p>
+        </div>
+        <div class="date-section">
+            <p>25 июля 2025</p>
+        </div>
+    </div>
+
+    <!-- Вторая страница -->
+    <div class="second-page">
+        <h2>ДОРОГОЙ ГОСТЬ!</h2>
+        <p>Мы рады сообщить вам, что 25.07.2025 состоится самое главное торжество в нашей жизни - день нашей свадьбы!</p>
+        <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>
+        <p>25.07.2025 в 10:00</p>
+        <div class="couple-photo">
+            <img src="{{ url_for('static', filename='wedding-photo.jpg') }}" alt="Молодожены">
+        </div>
+    </div>
+
+    <!-- Третья страница -->
+    <div class="third-page">
+        <h2>Там, где посеяна любовь, растет радость</h2>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='timur.jpg') }}" alt="Тимур">
+            <h3>Тимур</h3>
+        </div>
+        <div class="profile">
+            <img src="{{ url_for('static', filename='nastya.jpg') }}" alt="Настя">
+            <h3>Настя</h3>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const secondPage = document.querySelector('.second-page');
+            const thirdPage = document.querySelector('.third-page');
+
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const triggerPoint = window.innerHeight / 1.5;
+
+                if (scrollPosition > triggerPoint) {
+                    secondPage.classList.add('visible');
+                }
+                if (scrollPosition > triggerPoint * 2) {
+                    thirdPage.classList.add('visible');
+                }
+            });
+        });
+    </script>
+
+    <div class="hearts-container">
+        <span class="heart">❤️</span>
+        <span class="heart">💖</span>
+        <span class="heart">💞</span>
+        <span class="heart">💕</span>
+        <span class="heart">💗</span>
+        <span class="heart">❤️</span>
+        <span class="heart">💖</span>
+        <span class="heart">💞</span>
+        <span class="heart">💕</span>
+        <span class="heart">💗</span>
+    </div>
+
+    <div class="page4">
+        <!-- МЕНЮ -->
+        <h1>МЕНЮ</h1>
+        <p>Здесь будет текст, объясняющий, что вы предлагаете в меню на вашей свадьбе.</p>
+
+        <!-- ПОЖЕЛАНИЯ ПО ПОДАРКАМ -->
+        <h1>ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h1>
+        <p>Мы будем счастливы, если вы подарите нам что-то, что будет соответствовать нашим пожеланиям.</p>
+
+        <!-- ПРИМЕЧАНИЕ -->
+        <h1>ПРИМЕЧАНИЕ</h1>
+        <p>Здесь будет информация, которая может быть полезной для гостей, например, важные моменты и инструкции.</p>
+
+        <!-- ПОДТВЕРЖДЕНИЕ -->
+        <h1>ПОДТВЕРЖДЕНИЕ</h1>
+        <p>Пожалуйста, подтвердите ваше присутствие на свадьбе, чтобы мы могли учесть ваш приход.</p>
+
+        <!-- ФОТО -->
+        <h1>ФОТО</h1>
+        <p>Здесь будет раздел для ваших фотографий, которые вы хотите поделиться с гостями.</p>
+
+        <!-- ЖДЕМ ВАС НА СВАДЬБЕ -->
+        <h2 class="italic-text">ЖДЕМ ВАС НА НАШЕЙ СВАДЬБЕ!</h2>
+        <p>Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры:</p>
+
+        <!-- Кружочки с цветами -->
+        <div class="circle-container">
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+            <div class="circle circle4"></div>
+            <div class="circle circle5"></div>
+        </div>
+    </div>
+
+    <div class="page5">
+        <h1>Свадебное расписание</h1>
+
+        <!-- Столбцы с временем и событиями -->
+        <div class="schedule">
+            <div class="time-event">
+                <p class="time">16:30 25.07.2025</p>
+                <p class="event">Фуршет<br>Ресторан Sherri</p>
+            </div>
+            <div class="description">
+                <p>Приглашаем Вас разделить вместе с нами радость создания новой семьи.</p>
+            </div>
+        </div>
+
+        <div class="schedule">
+            <div class="time-event">
+                <p class="time">17:00 25.07.2025</p>
+                <p class="event">Выездная регистрация<br>Ресторан Sherri</p>
+            </div>
+            <div class="description">
+                <p>Приглашаем Вас разделить вместе с нами радость создания новой семьи.</p>
+            </div>
+        </div>
+
+        <div class="schedule">
+            <div class="time-event">
+                <p class="time">18:00 25.07.2025</p>
+                <p class="event">Ресторан Банкетный зал</p>
+            </div>
+            <div class="description">
+                <p>Именно здесь мы отметим наш незабываемый день.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="ru">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Тимур & Настя</title>-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">-->
+<!--    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container">-->
+<!--        <div class="photo-section">-->
+<!--            <img src="{{ url_for('static', filename='timur.jpg') }}" alt="Тимур">-->
+<!--            <h2>Тимур</h2>-->
+<!--            <span class="heart">❤️</span>-->
+<!--        </div>-->
+<!--        <div class="photo-section">-->
+<!--            <img src="{{ url_for('static', filename='nastya.jpg') }}" alt="Настя">-->
+<!--            <h2>Настя</h2>-->
+<!--            <span class="heart">❤️</span>-->
+<!--        </div>-->
+<!--        <div class="text-section">-->
+<!--            <p>Т + Н = ❤️</p>-->
+<!--            <p>МЫ ВЫРОСЛИ, НАМ ТЕПЕРЬ МОЖНО!</p>-->
+<!--        </div>-->
+<!--        <div class="date-section">-->
+<!--            <p>25 июля 2025</p>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Вторая страница &ndash;&gt;-->
+<!--    <div class="second-page">-->
+<!--        <h2>ДОРОГОЙ ГОСТЬ!</h2>-->
+<!--        <p>Мы рады сообщить вам, что 25.07.2025 состоится самое главное торжество в нашей жизни - день нашей свадьбы!</p>-->
+<!--        <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>-->
+<!--        <p>25.07.2025 в 10:00</p>-->
+<!--        <div class="couple-photo">-->
+<!--            <img src="{{ url_for('static', filename='wedding-photo.jpg') }}" alt="Молодожены">-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Третья страница &ndash;&gt;-->
+<!--    <div class="third-page">-->
+<!--        <h2>Там, где посеяна любовь, растет радость</h2>-->
+<!--        <div class="profile">-->
+<!--            <img src="{{ url_for('static', filename='timur.jpg') }}" alt="Тимур">-->
+<!--            <h3>Тимур</h3>-->
+<!--        </div>-->
+<!--        <div class="profile">-->
+<!--            <img src="{{ url_for('static', filename='nastya.jpg') }}" alt="Настя">-->
+<!--            <h3>Настя</h3>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--    <script>-->
+<!--        document.addEventListener("DOMContentLoaded", function() {-->
+<!--            const secondPage = document.querySelector('.second-page');-->
+<!--            const thirdPage = document.querySelector('.third-page');-->
+
+<!--            window.addEventListener('scroll', function() {-->
+<!--                const scrollPosition = window.scrollY;-->
+<!--                const triggerPoint = window.innerHeight / 1.5;-->
+
+<!--                if (scrollPosition > triggerPoint) {-->
+<!--                    secondPage.classList.add('visible');-->
+<!--                }-->
+<!--                if (scrollPosition > triggerPoint * 2) {-->
+<!--                    thirdPage.classList.add('visible');-->
+<!--                }-->
+<!--            });-->
+<!--        });-->
+<!--    </script>-->
+<!--    <div class="hearts-container">-->
+<!--        <span class="heart">❤️</span>-->
+<!--        <span class="heart">💖</span>-->
+<!--        <span class="heart">💞</span>-->
+<!--        <span class="heart">💕</span>-->
+<!--        <span class="heart">💗</span>-->
+<!--        <span class="heart">❤️</span>-->
+<!--        <span class="heart">💖</span>-->
+<!--        <span class="heart">💞</span>-->
+<!--        <span class="heart">💕</span>-->
+<!--        <span class="heart">💗</span>-->
+<!--    </div>-->
+
+<!--    <div class="page4">-->
+<!--        &lt;!&ndash; МЕНЮ &ndash;&gt;-->
+<!--        <h1>МЕНЮ</h1>-->
+<!--        <p>Здесь будет текст, объясняющий, что вы предлагаете в меню на вашей свадьбе.</p>-->
+
+<!--        &lt;!&ndash; ПОЖЕЛАНИЯ ПО ПОДАРКАМ &ndash;&gt;-->
+<!--        <h1>ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h1>-->
+<!--        <p>Мы будем счастливы, если вы подарите нам что-то, что будет соответствовать нашим пожеланиям.</p>-->
+
+<!--        &lt;!&ndash; ПРИМЕЧАНИЕ &ndash;&gt;-->
+<!--        <h1>ПРИМЕЧАНИЕ</h1>-->
+<!--        <p>Здесь будет информация, которая может быть полезной для гостей, например, важные моменты и инструкции.</p>-->
+
+<!--        &lt;!&ndash; ПОДТВЕРЖДЕНИЕ &ndash;&gt;-->
+<!--        <h1>ПОДТВЕРЖДЕНИЕ</h1>-->
+<!--        <p>Пожалуйста, подтвердите ваше присутствие на свадьбе, чтобы мы могли учесть ваш приход.</p>-->
+
+<!--        &lt;!&ndash; ФОТО &ndash;&gt;-->
+<!--        <h1>ФОТО</h1>-->
+<!--        <p>Здесь будет раздел для ваших фотографий, которые вы хотите поделиться с гостями.</p>-->
+
+<!--        &lt;!&ndash; ЖДЕМ ВАС НА СВАДЬБЕ &ndash;&gt;-->
+<!--        <h2 class="italic-text">ЖДЕМ ВАС НА НАШЕЙ СВАДЬБЕ!</h2>-->
+<!--        <p>Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры:</p>-->
+
+<!--        &lt;!&ndash; Кружочки с цветами &ndash;&gt;-->
+<!--        <div class="circle-container">-->
+<!--            <div class="circle circle1"></div>-->
+<!--            <div class="circle circle2"></div>-->
+<!--            <div class="circle circle3"></div>-->
+<!--            <div class="circle circle4"></div>-->
+<!--            <div class="circle circle5"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <head>-->
+<!--        &lt;!&ndash; Подключаем шрифты через Google Fonts &ndash;&gt;-->
+<!--        <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">-->
+<!--    </head>-->
+
+<!--    <div class="page5">-->
+<!--        <h1>Свадебное расписание</h1>-->
+
+<!--        &lt;!&ndash; Столбцы с временем и событиями &ndash;&gt;-->
+<!--        <div class="schedule">-->
+<!--            <div class="time-event">-->
+<!--                <p class="time">16:30 25.07.2025</p>-->
+<!--                <p class="event">Фуршет<br>Ресторан Sherri</p>-->
+<!--            </div>-->
+<!--            <div class="description">-->
+<!--                <p>Приглашаем Вас разделить вместе с нами радость создания новой семьи.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="schedule">-->
+<!--            <div class="time-event">-->
+<!--                <p class="time">17:00 25.07.2025</p>-->
+<!--                <p class="event">Выездная регистрация<br>Ресторан Sherri</p>-->
+<!--            </div>-->
+<!--            <div class="description">-->
+<!--                <p>Приглашаем Вас разделить вместе с нами радость создания новой семьи.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="schedule">-->
+<!--            <div class="time-event">-->
+<!--                <p class="time">18:00 25.07.2025</p>-->
+<!--                <p class="event">Ресторан Банкетный зал</p>-->
+<!--            </div>-->
+<!--            <div class="description">-->
+<!--                <p>Именно здесь мы отметим наш незабываемый день.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+
+<!--</body>-->
+<!--</html>-->
