@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Свадебный сайт Тимура и Насти">
+    <meta name="keywords" content="свадьба, Тимур, Настя, 25 июля 2025">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <title>Тимур & Настя - Свадьба!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Yellowtail&family=Calligraffitti&family=Dosis&family=Merienda&family=Tangerine&family=Bad+Script&family=Reenie+Beanie&family=Zilla+Slab+Highlight&family=Italianno&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bella+Script&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css2?family=Italianno&family=Mr+Dafoe&family=Vibur&display=swap' rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script&family=Playfair+Display&family=Lobster&family=Pacifico&family=Satisfy&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Dancing+Script&family=Great+Vibes&family=Satisfy&family=Sacramento&family=Allura&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Dancing+Script&family=Amatic+SC&family=Shadows+Into+Light&family=Courgette&family=Gloria+Hallelujah&family=Fredericka+the+Great&family=Poiret+One&family=Satisfy&family=Rock+Salt&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Тимур & Настя</h1>
+        <p class="date">25 июля 2025</p>
+    </header>
+
+    <main>
+        <section class="page-section" id="home">
+            <div class="container" style="text-align: center;"> <!-- добавление text-align: center; -->
+                <div class="photo-section polaroid">
+                    <img src="{{ url_for('static', filename='timur.jpg') }}" alt="Тимур">
+                    <h2>Тимур</h2>
+
+                </div>
+                <div class="photo-section polaroid">
+                    <img src="{{ url_for('static', filename='nastya.jpg') }}" alt="Настя">
+                    <h2>Настя</h2>
+
+                </div>
+                <div class="text-section">
+                    <p>Т + Н = ❤️</p>
+                    <p>МЫ ВЫРОСЛИ, И ТЕПЕРЬ НАМ МОЖНО!</p>
+                </div>
+                <div class="date-section">
+                    <div id="countdown"></div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="second-page page-section" id="invitation">
+            <div class="container">
+                <h2>ДОРОГОЙ ГОСТЬ!</h2>
+                <p>Мы рады сообщить вам, что 25.07.2025 состоится самое главное торжество в нашей жизни - день нашей свадьбы!</p>
+                <p>Приглашаем Вас разделить с нами радость этого незабываемого дня.</p>
+                <p class="small-spacing">25.07.2025 в 16:30</p>
+                <p class="small-spacing">Ресторан «Sherri»</p>
+                <p class="small-spacing">Семинарская, 27</p>
+                <div class="couple-photo">
+                    <img src="{{ url_for('static', filename='wedding-photo.jpg') }}" alt="Молодожены">
+                </div>
+            </div>
+        </section>
+
+        <section class="third-page page-section" id="about-us">
+            <div class="container">
+                <h2>Там, где посеяна любовь, растет радость</h2>
+                <div class="profile">
+                    <img src="{{ url_for('static', filename='timur2.jpg') }}" alt="Тимур">
+                    <h3>Тимур</h3>
+                </div>
+                <div class="profile">
+                    <img src="{{ url_for('static', filename='nastya2.jpg') }}" alt="Настя">
+                    <h3>Настя</h3>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="page4 page-section" id="info">
+            <div class="container">
+                <h1>МЕНЮ</h1>
+                <p>Меню разнообразно, поэтому сообщите нам заранее, если у вас есть какие-либо предпочтения или диетические ограничения. После подтверждения вы сможете пройти опрос о своих вкусовых предпочтениях и напитках.</p>
+
+                <h1>ПОЖЕЛАНИЯ ПО ПОДАРКАМ</h1>
+                <p>Ваше присутствие в день нашей свадьбы - самый значимый подарок для нас! Мы понимаем, что дарить цветы на свадьбу - это традиция, но мы не сможем насладиться их красотой в полной мере... Будем рады любой другой альтернативе (вино или в денежном эквиваленте)</p>
+
+                <h1>ПРИМЕЧАНИЕ</h1>
+                <p>Будем благодарны, если вы воздержитесь от криков "Горько" на празднике, ведь поцелуй — это знак выражения чувств, он не может быть по заказу.</p>
+
+                <h1>ПОДТВЕРЖДЕНИЕ</h1>
+                <p>Пожалуйста, подтвердите ваше присутствие на свадьбе в форме ниже, чтобы мы могли учесть ваш приход.</p>
+
+                <h1>ФОТО</h1>
+                <p>Опубликуйте фото дня нашей свадьбы с хештешом #</p>
+
+                <h2 class="italic-text">ЖДЕМ ВАС НА НАШЕЙ СВАДЬБЕ!</h2>
+                <p>Будем благодарны, если при выборе нарядов на наше торжество вы придержитесь следующей палитры:</p>
+
+                <div class="image-container">
+                    <img src="{{ url_for('static', filename='palette1.jpg') }}" alt="Палитра 1" class="resized-image">
+                    <img src="{{ url_for('static', filename='palette2.jpg') }}" alt="Палитра 2" class="resized-image">
+                </div>
+            </div>
+        </section>
+
+        <section class="confirmation-section page-section" id="confirm">
+            <div class="container">
+                <p>Дорогие гости! Пожалуйста, подтвердите свое присутствие.</p>
+                <form action="{{ url_for('confirm_attendance') }}" method="POST">
+                    <label for="name">Ваше ФИО:</label>
+                    <input type="text" id="name" name="name" required autocomplete="name">
+
+                    <label for="guests">Количество гостей:</label>
+                    <input type="number" id="guests" name="guests" min="1" required>
+
+                    <label for="phone">Ваш номер телефона:</label>
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel">
+
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="page5 page-section" id="schedule">
+            <div class="container">
+                <h1>Свадебное расписание</h1>
+
+                <div class="schedule">
+                    <div class="time-event">
+                        <p>16:30 25.07.2025</p>
+                    </div>
+                    <div class="event-details">
+                        <p class="event">Фуршет</p>
+                        <p class="location">Ресторан Sherri</p>
+                    </div>
+                </div>
+
+                <div class="schedule">
+                    <div class="time-event">
+                        <p>17:00 25.07.2025</p>
+                    </div>
+                    <div class="event-details">
+                        <p class="event">Выездная регистрация</p>
+                        <p class="location">Ресторан Sherri</p>
+                        <p class="event-description">Приглашаем вас разделить вместе с нами радость создания новой семьи.</p>
+                    </div>
+                </div>
+
+                <div class="schedule">
+                    <div class="time-event">
+                        <p>18:00 25.07.2025</p>
+                    </div>
+                    <div class="event-details">
+                        <p class="event">Банкет</p>
+                        <p class="location">Ресторан Банкетный зал</p>
+                        <p class="event-description">Именно здесь мы отметим наш незабываемый день.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <footer>
+        <p>&copy; 2025 Тимур & Настя</p>
+    </footer>
+
+    <script>
+        function countdown() {
+            const weddingDate = new Date("July 25, 2025 00:00:00").getTime();
+            const countdownElement = document.getElementById("countdown");
+
+            function updateTimer() {
+                const now = new Date().getTime();
+                const timeLeft = weddingDate - now;
+
+                if (timeLeft <= 0) {
+                    countdownElement.innerHTML = "<p>Свадьба уже началась! 💍</p>";
+                    return;
+                }
+
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownElement.innerHTML = `
+                    <div class="countdown-box">${days}<span>дней</span></div>
+                    <div class="countdown-box">${hours}<span>часов</span></div>
+                    <div class="countdown-box">${minutes}<span>минут</span></div>
+                    <div class="countdown-box">${seconds}<span>секунд</span></div>
+                `;
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+
+        document.addEventListener("DOMContentLoaded", countdown);
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll('.page-section');
+
+            window.addEventListener('scroll', function() {
+                const scrollPosition = window.scrollY;
+                const triggerPoint = window.innerHeight / 1.5;
+
+                sections.forEach(section => {
+                    if (scrollPosition > section.offsetTop - triggerPoint) {
+                        section.classList.add('visible');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

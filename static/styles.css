@@ -1,0 +1,557 @@
+/* Сброс стилей */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables */
+:root {
+    --primary-color: #e44d26;
+    --secondary-color: #333;
+    --background-color: #f8f8f8;
+    --font-family: 'Roboto Slab', cursive;
+}
+
+/* Общие стили */
+body {
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url("{{ url_for('static', filename='heart-pattern.png') }}") repeat, #dceefb;
+    color: var(--secondary-color);
+}
+
+header {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-family: 'Great Vibes', cursive;
+    color: var(--primary-color);
+}
+
+header .date {
+    font-size: 1.5rem;
+    font-family: 'Great Vibes', cursive;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.page-section {
+    padding: 50px 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.page-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* Стили для полароидных фото */
+.photo-section.polaroid {
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 250px; /* Ширина полароида */
+    padding: 15px;
+    margin: 20px auto; /*  auto отступы слева и справа для центрирования */
+    text-align: center;
+    display: block; /* Устанавливаем как блочный элемент для работы auto margin */
+}
+
+.photo-section.polaroid img {
+    width: 100%; /* Фото занимает всю ширину полароида */
+    height: auto;
+    border-radius: 0; /* Убираем скругление углов */
+    object-fit: cover;
+    margin-bottom: 10px;
+    box-shadow: none; /* Убираем тень с фото */
+    padding: 0; /* Убираем внутренние отступы */
+    background: none; /* Убираем белый фон */
+}
+
+.photo-section.polaroid h2 {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    font-family: 'Great Vibes', cursive;
+}
+
+.text-section {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Bad Script', cursive;
+}
+
+.date-section {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+#countdown {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.countdown-box {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 0 5px;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-box span {
+    display: block;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    color: #777;
+}
+
+/* Стили для второй страницы */
+.second-page {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.second-page h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Bad Script', cursive;
+}
+
+.second-page p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    font-family: 'Lora', serif;
+}
+
+.second-page .small-spacing {
+    margin-bottom: 5px;
+}
+
+.couple-photo img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Стили для третьей страницы */
+.third-page {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.third-page h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-family: 'Great Vibes', cursive;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.profile h3 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Стили для сердечек */
+.hearts-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.hearts-container .heart {
+    font-size: 2rem;
+    color: red;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Стили для четвертой страницы */
+.page4 {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.page4 h1 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    font-family: 'Bad Script', cursive;
+}
+
+.page4 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Lora', serif;
+}
+
+.page4 .italic-text {
+    font-family: 'Nunito', cursive;
+    margin: 50px 0;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.circle1 { background-color: #f0f; } /* Розовый */
+.circle2 { background-color: #90ee90; } /* Светло-зеленый */
+.circle3 { background-color: #dda0dd; } /* Сливовый */
+.circle4 { background-color: #e6e6fa; } /* Лавандовый */
+.circle5 { background-color: #b0e0e6; } /* Пороховой синий */
+
+/* Стили для формы подтверждения */
+.confirmation-section {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.confirmation-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-family: 'Lora', serif;
+}
+
+.confirmation-section p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-family: 'Lora', serif;
+}
+
+.confirmation-section form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.confirmation-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+
+}
+
+.confirmation-section input[type="text"],
+.confirmation-section input[type="number"],
+.confirmation-section input[type="tel"] {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.confirmation-section button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.confirmation-section button[type="submit"]:hover {
+    background-color: #d35400;
+}
+
+/* Стили для расписания */
+.page5 {
+    background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Заголовок */
+.page5 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-family: 'Great Vibes', cursive;
+    color: #000;
+}
+
+/* Блок расписания */
+.schedule {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #f48fb1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Анимация при наведении */
+.schedule:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Время и дата */
+.time-event {
+    flex: 0.3;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    font-family: 'Lora', serif;
+}
+
+/* Название события */
+.event-details {
+    flex: 0.7;
+    text-align: left;
+    font-family: 'Lora', serif;
+}
+
+.event {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 3px;
+    font-family: 'Lora', serif;
+}
+
+/* Серый текст для места проведения */
+.location {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* Описание под событиями */
+.event-description {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #444;
+    font-style: italic;
+    margin-top: 5px;
+}
+
+
+.image-container {
+    display: flex; /* Располагает изображения в ряд */
+    justify-content: center; /* Центрирует их по горизонтали */
+    gap: 20px; /* Расстояние между изображениями */
+}
+
+.resized-image {
+    width: 300px; /* Установите желаемую ширину */
+    height: 300px; /* Установите желаемую высоту */
+    object-fit: contain; /* Сохраняет пропорции и вписывает изображение в контейнер */
+    background-color: #f0f0f0; /* Добавляет фон для пустых областей (опционально) */
+    border-radius: 10px; /* Скругленные углы (опционально) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тень вокруг изображения */
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .photo-section img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .text-section {
+        font-size: 1.2rem;
+    }
+
+    .page-section {
+        padding: 30px 10px;
+    }
+
+    .circle-container {
+        flex-wrap: wrap;
+    }
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+
+    .schedule {
+        flex-direction: column;
+    }
+
+    .description {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .confirmation-section input[type="text"],
+    .confirmation-section input[type="number"],
+    .confirmation-section input[type="tel"] {
+        width: 100%;
+    }
+    .resized-image {
+    width: 200px; /* Установите желаемую ширину */
+    height: 200px; /* Установите желаемую высоту */
+    }
+    .schedule {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .time-event {
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .event-details {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-section img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile img {
+        width: 220px;
+        height: 220px;
+    }
+
+    .text-section {
+        font-size: 1rem;
+    }
+
+    .circle {
+        width: 20px;
+        height: 20px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header .date {
+        font-size: 1.2rem;
+    }
+
+    .page5 h1 {
+        font-size: 1.5rem;
+    }
+    .resized-image {
+    width: 200px; /* Установите желаемую ширину */
+    height: 200px; /* Установите желаемую высоту */
+    }
+}
+
+.heart {
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    font-size: 2rem;
+    color: red;
+    animation: heartbeat 1.5s infinite, moveHeart 10s linear infinite;
+}
+
+@keyframes moveHeart {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-500px); /* Дальность полета */
+        opacity: 0;
+    }
+}
+
